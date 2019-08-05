@@ -12,8 +12,9 @@ public class MainActivity extends AppCompatActivity {
     Button yesButton, noButton, trueButton, falseButton;
     TextView quesTextview;
     LinearLayout quizButtons;
-    int noOfQues = 0;
     String[] questions = new String[10];
+    int noOfQues = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +28,14 @@ public class MainActivity extends AppCompatActivity {
         falseButton = findViewById(R.id.false_button);
         quizButtons.setVisibility(View.GONE);
 
+        //add questions
         questions[0] = getString(R.string.ques1);
         questions[1] = getString(R.string.ques2);
         questions[2] = getString(R.string.ques3);
         questions[3] = getString(R.string.ques4);
         questions[4] = getString(R.string.ques5);
 
+        //if yes, start asking the ques
         yesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //take ans input as true/false.
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
